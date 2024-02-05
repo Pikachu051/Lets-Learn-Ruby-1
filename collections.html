@@ -1,0 +1,274 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby - Collections</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="script.js"></script>
+</head>
+<body class="bg-black text-white">
+    <div class="p-5 text-center">
+        <div class="dropdown inline-block relative">
+          <button class="bg-gray-900 text-gray-500 font-semibold py-2 px-[80px] hover:text-red-300 hover:bg-gray-800 transition-all rounded inline-flex items-center">
+            <span class="mr-1">Go to ?</span>
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+          </button>
+          <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
+            <li class=""><a class="rounded-t text-white bg-gray-800 hover:text-red-300 transition-all py-2 px-[74px] block whitespace-no-wrap" href="index.html">Home</a></li>
+            <li class=""><a class="text-white bg-gray-800 hover:text-red-300 transition-all py-2 px-[74px] block whitespace-no-wrap" href="installation.html">Installation</a></li>
+            <li class=""><a class="text-white bg-gray-800 hover:text-red-300 transition-all py-2 px-[74px] block whitespace-no-wrap" href="variables.html">Variables</a></li>
+            <li class=""><a class="text-white bg-gray-800 hover:text-red-300 transition-all py-2 px-[74px] block whitespace-no-wrap" href="collections.html">Collections</a></li>
+            <li class=""><a class="text-white bg-gray-800 hover:text-red-300 transition-all py-2 px-[74px] block whitespace-no-wrap" href="conditional.html">Conditional</a></li>
+            <li class=""><a class="text-white bg-gray-800 hover:text-red-300 transition-all py-2 px-[74px] block whitespace-no-wrap" href="loops.html">Loops</a></li>
+            <li class=""><a class="rounded-b text-white bg-gray-800 hover:text-red-300 transition-all py-2 px-[74px] block whitespace-no-wrap" href="references.html">References</a></li>
+          </ul>
+        </div>
+    </div>
+    <div id="all">
+        <h1 class='font-bold text-5xl pl-[50px]'>Working With Collections</h1>
+        <div class='pl-[100px] pt-[20px] w-[90%]'>                
+            <h2 class='text-2xl text-red-400'>What Is a String?</h2>
+            <p class='pb-2'>In computer programming, a string is traditionally a sequence of characters, either as a literal constant or as some kind of variable. The latter may allow its elements to be mutated and the length changed, or it may be fixed (after creation). A string is generally understood as a data type and is often implemented as an array data structure of bytes (or words) that stores a sequence of elements, typically characters, using some character encoding. A string may also denote more general arrays or other sequence (or list) data types and structures.</p>
+
+            <br/>In Ruby, a string is a sequence of characters inside quotes.<br/>Example:
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`'kraprow'`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                "kraprow"
+            </div> 
+            <p class='pb-2'>You need the quotes <strong>so you can tell the difference between strings & variables.</strong></p>
+            <ul class='list-disc pl-5 pb-5'>
+                <li>A string is data.</li>
+                <li>A variable is a name for something.</li>
+            </ul>
+            <br/><p>In fact, you can use a variable to name a string:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`food = 'kraprow'`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                food = "kraprow"
+            </div>
+            <p class='pb-5'>Now, <i>food</i> will be "kraprow".</p>
+            <p class="mb-10">This helps you reuse the string as many times as you want.</p>
+            <h2 class='text-2xl text-red-400'>What Can You With String?</h2>
+            <p>Strings can do many things for you.</p>
+            <br/><p>For example, you can ask a string for its size:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`'kraprow'.size`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                "kraprow".size
+                <br/><p class="text-gray-500">#7</p>
+            </div>
+            <p class='pb-2'>This will return the number of characters in the string, which is 7.</p>
+            <p>Or you can tell the string to uppercase itself:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`'kraprow'.upcase`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                "kraprow".upcase
+                <br/><p class="text-gray-500">#KRAPROW</p>
+            </div>
+            <p>We call these “methods”, and there are many of them.
+            <br/>There are methods that allow you to substitute all or part of the string.
+            <br/>Like <i>gsub</i> :</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`'kraprow'.gsub('k', 'K')`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                "kraprow".gsub('k', 'K')
+                <br/><p class="text-gray-500">#Kraprow</p>
+            </div>
+            <p>Or to split the string into a list of characters:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`'kraprow'.split('')`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                "kraprow".split('')
+                <br/><p class="text-gray-500">#["k", "r", "a", "p", "r", "o", "w"]</p>
+            </div>
+            <p class="mb-10">There are many more methods you can use with strings. Check this <a target="_blank" href="https://www.rubyguides.com/2018/01/ruby-string-methods/" class='text-red-200 hover:text-red-400 hover:transition-all'>article</a> for more.</p>
+            <h2 class="text-2xl text-red-400">When To Use Strings?</h2>
+            <p class="">You can use strings when you want to store text data, like names, addresses, or any other text-based data.</p>
+            <br/><p>Or when you want to print a message to the screen.</p>
+            <br/><p>Like this:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`puts 'Hello, World!'`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                puts "Hello, World!"
+            </div>
+            Also when you read files, read input from the user (with the gets method), or when you want to combine several pieces of information together.
+            <br/><br/>Strings can contain numbers, but that does not mean you can treat them like numbers.
+            <br/><br/>Here is what I mean:
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`'32' + '10'`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                "32" + "10"
+                <br/><p class="text-gray-500">#3210</p>
+            </div>
+            <p class="">This will return 3210, not 42.</p>
+            <br/><p>If you want to convert a string with numbers into an actual integer value you have to use the <i>to_i</i> method.</p>
+            <br/><p>Converting a string to integer:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`'32'.to_i + '10'.to_i`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                "32".to_i + "10".to_i
+                <br/><p class="text-gray-500">#42</p>
+            </div>
+            <p>Converting an integer to a string:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`32.to_s + 10.to_s`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                32.to_s + 10.to_s
+                <br/><p class="text-gray-500">#3210</p>
+            </div>
+            <p>Why is there a difference?</p>
+            <br/><p>Because Ruby treats strings and numbers differently. Integers are numbers, they must behave like numbers and allow for mathematical operations.</p>      
+            <br/><p class="mb-10">Strings are not numbers, they are just a sequence of characters.</p>
+            <h2 class="text-2xl text-red-400">How to Combine Strings Using String Interpolation</h2>
+            <p class="">You can combine strings using a technique named "string interpolation".</p>
+            <br/><p>Here is how it works:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`age = 20
+name = 'John'
+
+puts 'Hello #{name}, we know you are #{age} years old!'`);" mlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                age = 20
+                <br/>name = "John"
+                <br/><br/>puts "Hello #{name}, we know you are #{age} years old!"
+            </div>
+            <p>Ruby replaces these <i>#{name}</i> and <i>#{age}</i> by their values, producing the combined string.</p>
+            <h2 class="How to Use Arrays"></h2>
+            <p>If you want to have <strong>many of the same thing</strong> then arrays are very useful.</p>
+            <br/><p>An array is a collection of items in a single location.</p>
+            <br/><p>For example, you can use an array to store a list of numbers:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`[1, 2, 3, 4, 5]`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                [1, 2, 3, 4, 5]
+            </div>
+            <p>Or a list of strings:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`['apple', 'banana', 'cherry']`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                ['apple', 'banana', 'cherry']
+            </div>
+            <p>You can access every element by its position. We call that position an index.</p>
+            <br/><p>Example:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`fruits = ['apple', 'banana', 'cherry']
+puts fruits[0]
+puts fruits[1]
+puts fruits[2]`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                fruits = ['apple', 'banana', 'cherry']
+                <br/>puts fruits[0]
+                <br/>puts fruits[1]
+                <br/>puts fruits[2]
+            </div>
+            <p class="text-red-400 text-2xl">Important!</p>
+            <p>Arrays start at 0, not 1.</p>
+            <p>So, the first element is at index 0, the second at index 1, and so on.</p>
+            <br/><p>And if you ask for an index that is bigger than the array size you'll get a nil value.</p>
+            <p>Example:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`fruits = ['apple', 'banana', 'cherry']
+puts fruits[3]`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                fruits = ['apple', 'banana', 'cherry']
+                <br/>puts fruits[3]
+            </div>
+            <p>A nil value is Ruby telling you: "I can't find what you want so here is a generic response"</p>
+            <p>And just like strings, array have a set of methods you can use to make them do things.</p>
+            <p>For example:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`fruits = ['apple', 'banana', 'cherry']
+puts fruits.size`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                fruits = ['apple', 'banana', 'cherry']
+                <br/>puts fruits.size
+                <br/><p class="text-gray-500">#3</p>
+            </div>
+            <p>You can add new elements to an array like this:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`numbers = []
+numbers << 1
+numbers << 2
+numbers << 3
+numbers`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                numbers = []
+                <br/>numbers << 1
+                <br/>numbers << 2
+                <br/>numbers << 3
+                <br/>numbers
+                <br/><p class="text-gray-500"># [1, 2, 3]</p>
+            </div>
+            <p>And you can remove elements from an array like this:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`numbers = [1, 2, 3]
+numbers.pop
+numbers`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                numbers = [1, 2, 3]
+                <br/>numbers.pop
+                <br/>numbers
+                <br/><p class="text-gray-500"># [1, 2]</p>
+            </div>
+            <p class="mb-10">Both strings and arrays are <strong>very important building blocks for writing your Ruby programs</strong>. So, write it down, lads.</p>
+            <h2 class="text-2xl text-red-400">How to Use a Ruby Hash</h2>
+            <p>A hash is a collection of key-value pairs. Think of it as a dictionary, or a domain name to an IP address, or a phone number to a person's name.</p>
+            <br/><p>Here is an example:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`ip_to_domain = { 'google.com' => '142.250.189.206' }`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                ip_to_domain = { 'google.com' => '142.250.189.206' }
+            </div>
+            <p>You can get the value for a hash key like this:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`ip_to_domain['google.com']`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                ip_to_domain['google.com']
+                <br/><p class="text-gray-500"># "142.250.189.206"</p>
+            </div>
+            <p>And you can change the value like this:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`ip_to_domain['google.com'] = '8.8.8.8'`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                ip_to_domain['google.com'] = '8.8.8.8'
+            </div>
+            <p>And you can add new key-value pairs like this:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`ip_to_domain['yahoo.com'] = '74.6.231.20'`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                ip_to_domain['yahoo.com'] = '74.6.231.20'
+            </div>
+            <p>And you can remove key-value pairs like this:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`ip_to_domain.delete('yahoo.com')`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                ip_to_domain.delete('yahoo.com')
+            </div>
+            <p>These are 3 main operations you can do with a hash. Check out this <a target="_blank" href="https://ruby-doc.org/core-2.5.1/Hash.html" class='text-red-200 hover:text-red-400 hover:transition-all'>article</a> for more.</p>
+            <br/><p>By the way, you use a comma to seperate multiple key/value pairs. Like this:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`values = { 'a' => 1, 'b' => 2 }`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                values = { 'a' => 1, 'b' => 2 }
+            </div>
+            <div class="pt-10 pb-5 justify-center flex">
+                <a href="variables.html" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Previous (Variables)</a>
+                <a href="conditional.html" class="ml-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Next (Conditional)</a>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    @font-face {
+      font-family: 'Raleway';
+      src: url('Raleway-VariableFont_wght.ttf') format('truetype');
+    }
+    @font-face {
+        font-family: 'Source Code Pro';
+        src: url('SourceCodePro-VariableFont_wght.ttf') format('truetype');
+    }
+    body{
+        font-family: 'Raleway', sans-serif;
+    }
+    #code{
+        font-family: 'Source Code Pro', monospace;
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    #all{
+        animation: fadeIn;
+        animation-duration: 700ms;
+    }
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        animation: fadeIn 350ms;
+    }
+    .dropdown{
+        animation: fadeIn 500ms;
+    }
+</style>
+</html>

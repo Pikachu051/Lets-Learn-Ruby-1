@@ -1,0 +1,141 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby - Variables</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="script.js"></script>
+</head>
+<body class="bg-black text-white">
+    <div class="p-5 text-center">
+        <div class="dropdown inline-block relative">
+          <button class="bg-gray-900 text-gray-500 font-semibold py-2 px-[80px] hover:text-red-300 hover:bg-gray-800 transition-all rounded inline-flex items-center">
+            <span class="mr-1">Go to ?</span>
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+          </button>
+          <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
+            <li class=""><a class="rounded-t text-white bg-gray-800 hover:text-red-300 transition-all py-2 px-[74px] block whitespace-no-wrap" href="index.html">Home</a></li>
+            <li class=""><a class="text-white bg-gray-800 hover:text-red-300 transition-all py-2 px-[74px] block whitespace-no-wrap" href="installation.html">Installation</a></li>
+            <li class=""><a class="text-white bg-gray-800 hover:text-red-300 transition-all py-2 px-[74px] block whitespace-no-wrap" href="variables.html">Variables</a></li>
+            <li class=""><a class="text-white bg-gray-800 hover:text-red-300 transition-all py-2 px-[74px] block whitespace-no-wrap" href="collections.html">Collections</a></li>
+            <li class=""><a class="text-white bg-gray-800 hover:text-red-300 transition-all py-2 px-[74px] block whitespace-no-wrap" href="conditional.html">Conditional</a></li>
+            <li class=""><a class="text-white bg-gray-800 hover:text-red-300 transition-all py-2 px-[74px] block whitespace-no-wrap" href="loops.html">Loops</a></li>
+            <li class=""><a class="rounded-b text-white bg-gray-800 hover:text-red-300 transition-all py-2 px-[74px] block whitespace-no-wrap" href="references.html">References</a></li>
+          </ul>
+        </div>
+    </div>
+    <div id="all">
+        <h1 class='font-bold text-5xl pl-[50px]'>Variables in Ruby</h1>
+        <div class='pl-[100px] pt-[20px] w-[90%]'>                
+            <h2 class='text-2xl text-red-400'>What is a Ruby Variable?</h2>
+            <p class='pb-5'>A variable is just a label.
+
+It is a way to give names to things in your Ruby programs.
+
+Like the names we give to real-world things.
+
+<br/>When I say “apple”, you know what I am talking about.
+
+I do not have to describe it to you.
+
+That is what variables do!
+
+And they are way more useful that you may think.
+
+<br/>For example, you want to store some data into your program like your name or your age. Variables will be very useful in this kind of situation.</p>
+
+            <h2 class='text-2xl text-red-400'>Creating Local Variables</h2>
+            <p class='pb-2'>You can create variables by associating a Ruby object with a variable name. We call this <i>variable assignment</i>.</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`age = 32`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                age = 32
+            </div> 
+            <p class=''>Now when you type <i>age</i> Ruby will translate that into <i>32</i></p>
+            <br/><p>Try it!</p>
+            <br/><p>There is nothing special about the word <i>age</i>. You could use </p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`kraprow = 32`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                kraprow = 32
+            </div>
+            <p>The value of <i>kraprow</i> value would still be 32.</p>
+            <br/><p class='pb-5'>Variables are just names for things.</p>
+            <h2 class='text-2xl text-red-400'>How to Use Variables</h2>
+            <p class='pb-2'>To use a variable you write its name:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`age * 10`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                age * 10
+                <br/><p class="text-gray-500">#320</p>
+            </div>
+            <p class=''>This will return 320. You can also combine multiple variables together:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`age = 32
+multipliers = 10
+age * multipliers`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                age = 32
+                <br/>mutipliers = 10
+                <br/>age * mutipliers
+                <br/><p class="text-gray-500">#320</p>
+            </div>
+            <p>And save the result of calculations or combinations into a new variable:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`age = 32
+multipliers = 10
+result = age * multipliers`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                age = 32
+                <br/>mutipliers = 10
+                <br/>result = age * mutipliers
+            </div>
+            <p class='pb-5'>Now, <i>result</i> will be 320.</p>
+            <h2 class='text-2xl text-red-400'>Important!</h2>
+            <p class=''>You can not use a variable without assigning a value to it. If you do, Ruby will throw an error.</p>
+            <p class='pb-5'>Also, if you are running this code from a file, instead of irb, then you should use a method like <i>puts</i> to see the value of the variable.</p>
+            <h2 class='text-2xl text-red-400'>Ruby Variable Types</h2>
+            <p class='pb-2'>Ruby has five types of variables:</p>
+            <ul class='list-disc pl-5 pb-5'>
+                <li>Local Variables ( <i>apple</i> )</li>
+                <li>Instance Variables ( <i>@apple</i> )</li>
+                <li>Class Variables ( <i>@@apple</i> )</li>
+                <li>Global Variables ( <i>$apple</i> )</li>
+                <li>Constants ( <i>APPLE</i> )</li>
+            </ul>
+            <p class='pb-5'>You do not need to worry about these right now, but it is good to know they exist. The difference between them is on the <i>scope</i>. This means it depends on <i>from where can I access this variable?</i></p>
+            <div class="pt-10 pb-5 justify-center flex">
+                <a href="installation.html" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Previous (Installation)</a>
+                <a href="collections.html" class="ml-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Next (Collections)</a>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    @font-face {
+      font-family: 'Raleway';
+      src: url('Raleway-VariableFont_wght.ttf') format('truetype');
+    }
+    @font-face {
+        font-family: 'Source Code Pro';
+        src: url('SourceCodePro-VariableFont_wght.ttf') format('truetype');
+    }
+    body{
+        font-family: 'Raleway', sans-serif;
+    }
+    #code{
+        font-family: 'Source Code Pro', monospace;
+    }
+    @keyframes fadeIn {
+        0% {opacity: 0; transform: translateY(20px);}
+        100% {opacity: 1;}
+        
+    }
+    #all{
+        animation: fadeIn;
+        animation-duration: 700ms;
+    }
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        animation: fadeIn 350ms;
+    }
+    .dropdown{
+        animation: fadeIn 500ms;
+    }
+</style>
+</html>

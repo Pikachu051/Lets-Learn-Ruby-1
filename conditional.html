@@ -1,0 +1,334 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby - Conditional</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="script.js"></script>
+</head>
+<body class="bg-black text-white">
+    <div class="p-5 text-center">
+        <div class="dropdown inline-block relative">
+          <button class="bg-gray-900 text-gray-500 font-semibold py-2 px-[80px] hover:text-red-300 hover:bg-gray-800 transition-all rounded inline-flex items-center">
+            <span class="mr-1">Go to ?</span>
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+          </button>
+          <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
+            <li class=""><a class="rounded-t text-white bg-gray-800 hover:text-red-300 transition-all py-2 px-[74px] block whitespace-no-wrap" href="index.html">Home</a></li>
+            <li class=""><a class="text-white bg-gray-800 hover:text-red-300 transition-all py-2 px-[74px] block whitespace-no-wrap" href="installation.html">Installation</a></li>
+            <li class=""><a class="text-white bg-gray-800 hover:text-red-300 transition-all py-2 px-[74px] block whitespace-no-wrap" href="variables.html">Variables</a></li>
+            <li class=""><a class="text-white bg-gray-800 hover:text-red-300 transition-all py-2 px-[74px] block whitespace-no-wrap" href="collections.html">Collections</a></li>
+            <li class=""><a class="text-white bg-gray-800 hover:text-red-300 transition-all py-2 px-[74px] block whitespace-no-wrap" href="conditional.html">Conditional</a></li>
+            <li class=""><a class="text-white bg-gray-800 hover:text-red-300 transition-all py-2 px-[74px] block whitespace-no-wrap" href="loops.html">Loops</a></li>
+            <li class=""><a class="rounded-b text-white bg-gray-800 hover:text-red-300 transition-all py-2 px-[74px] block whitespace-no-wrap" href="references.html">References</a></li>
+          </ul>
+        </div>
+    </div>
+    <div id="all">
+        <h1 class='font-bold text-5xl pl-[50px]'>Conditional Statements</h1>
+        <div class='pl-[100px] pt-[20px] w-[90%]'>                
+            <h2 class='text-2xl text-red-400'>How Do You Make Decisions in Ruby?</h2>
+            <p class='pb-2'>Like these:</p>
+            <ul class='list-disc pl-5 pb-5'>
+                <li>“If the room is too cold turn on the heater”</li>
+                <li>“If we do not have enough stock of this product then send an order to buy more”</li>
+                <li>“If this customer has been with us for more than 3 years then send him a thank you gift”</li>
+            </ul>
+            <p>Things like that are what I mean by making decisions.</p>
+            <br/><p>If something is true (the condition) then you can do something.</p>
+            <p>In Ruby, you do this using <strong>if statement</strong>:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`stock = 10
+if stock < 1
+    puts 'Out of stock!'
+end`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                stock = 10
+                <br/>if stock < 1
+                <br/><pre>  puts 'Out of stock!'</pre>
+                end
+            </div>
+            <p>Notice the syntax. It's important to get it right.<br/><br/>The <i>stock < 1</i> part is what we called a "condition".<br/>This is what needs to be true for the code inside the condition to work.</p>
+            <p class="mb-10">In <strong>plain English</strong> this saying: "If the value of stock is less than 1 then print the 'out of stock' message, otherwise do nothing.</p>
+            <h2 class='text-2xl text-red-400'>Type of Conditions</h2>
+            <p class=''>There are a few different types of conditions you can use in Ruby:</p>
+            <table class="mt-4 mb-4 table-auto w-full">
+                <thead>
+                    <tr>
+                        <th class="border px-4 py-2 bg-gray-900">Type</th>
+                        <th class="border px-4 py-2 bg-gray-900">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border px-4 py-2 bg-gray-900">==</td>
+                        <td class="border px-4 py-2 bg-gray-900">Equal to</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2 bg-gray-900">!=</td>
+                        <td class="border px-4 py-2 bg-gray-900">Not equal to</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2 bg-gray-900">></td>
+                        <td class="border px-4 py-2 bg-gray-900">Greater than</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2 bg-gray-900">>=</td>
+                        <td class="border px-4 py-2 bg-gray-900">Greater than or equal to</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2 bg-gray-900"><</td>
+                        <td class="border px-4 py-2 bg-gray-900">Less than</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2 bg-gray-900"><=</td>
+                        <td class="border px-4 py-2 bg-gray-900">Less than or equal to</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="mb-10">Notice that we use two equal == symbols to mean equality!
+
+            <br/>One equals sign = in Ruby means “assignment”, make sure to use == when you want to find out if two things are the same.
+                
+            <br/>If you don’t this right you won’t get the expected results.</p>
+            <h2 class='text-2xl text-red-400'>Ruby Unless Statement</h2>
+            <p>With an if statement you can check if something is true. But when you want to check for the opposite “not true” (false) there is two things you can do.
+                
+            <br/><br/>You can reverse the value with !.</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`stock = 10
+if !stock < 1
+    puts 'We have stock!'
+end`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                stock = 10
+                <br/>if !stock < 1
+                <br/><pre>  puts 'We have stock!'</pre>
+                end
+            </div>
+            <p>Or you can use the <strong>unless statement</strong> which is like if but it's check for not true:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`stock = 10
+unless stock < 1
+    puts 'We have stock!'
+end`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                stock = 10
+                <br/>unless stock < 1
+                <br/><pre>  puts 'We have stock!'</pre>
+                end
+            </div>
+            <p>Both of these will print "We have stock!" to the console.</p>
+            <br/><p class="mb-10">Remember, using unless in Ruby is just the reverse of using if.
+            <br/>You’re saying “if this is not true, then do this…”.</p>
+            <h2 class='text-2xl text-red-400'>If Else Statement</h2>
+            <p>You can also say "if this is NOT true then do this other thing":</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`stock = 10
+if stock < 1
+    puts 'Out of stock!'
+else
+    puts 'We have stock!'
+end`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                stock = 10
+                <br/>if stock < 1
+                <br/><pre>  puts 'Out of stock!'</pre>
+                <br/>else
+                <br/><pre>  puts 'We have stock!'</pre>
+                end
+            </div>
+            <p>The else part is always optional, but it can help you write more advanced logic.</p>
+            <br/><p>You can take this one step further and use an elsif statement:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`stock = 10
+if stock < 1
+    puts 'Out of stock!'
+elsif stock < 5
+    puts 'Low stock!'
+else
+    puts 'We have stock!'
+end`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                stock = 10
+                <br/>if stock < 1
+                <br/><pre>  puts 'Out of stock!'</pre>
+                <br/>elsif stock < 5
+                <br/><pre>  puts 'Low stock!'</pre>
+                <br/>else
+                <br/><pre>  puts 'We have stock!'</pre>
+                end
+            </div>
+            <p>With elsif you can say:</p>
+            <br/><p class="mb-10">If <i>stock</i> is less than 1 print message, else if stock equals 10 print this special message, otherwise if none of these are true then print the thank you message.”</p>
+            <h2 class='text-2xl text-red-400'>How to Use Multiple Conditions</h2>
+            <p>If you’d like to write compound conditions, where you are checking if <strong>two things are true at the same time</strong>, then this section is for you.
+            <br/>You can do this by using the && (AND) operator:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`stock = 10
+price = 100
+if name == 'David' && country == 'UK'
+    puts 'You get free shipping!'
+end`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                stock = 10
+                <br/>price = 100
+                <br/>if name == 'David' && country == 'UK'
+                <br/><pre>  puts 'You get free shipping!'</pre>
+                end
+            </div>
+            <p>With this code, you are checking if the name is David and the country is UK at the same time.</p>
+            <br/><p>There is also the || (OR) operator:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`stock = 10
+age = 15
+if name == '10' || country == 'UK'
+    puts 'Congrats on your ${age} years old!'
+end`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                age = 15
+                <br/>if age  10 || age == 20
+                <br/><pre>  puts 'Congrats on your ${age} years old!'</pre>
+                end
+            </div>
+            <p>With this code, you are checking if the age is 10 or 20.</p>
+            <br/><p>Notice how these two operators (&&, ||) allow you to combine conditions, but they need to be proper conditions.
+            <br/>In other words, you CAN’T do this:
+            </p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`stock = 10
+if stock < 1 || > 5
+    puts 'We have stock!'
+end`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                stock = 10
+                <br/>if stock < 1 || > 5
+                <br/><pre>  puts 'We have stock!'</pre>
+                end
+            </div>
+            <p class="mb-10">You need to have a proper condition on both sides of the operator. You need a full condition on each side (age == 10 || age == 20).</p>
+            <h2 class='text-2xl text-red-400'>Things to Watch Out For</h2>
+            <p>Just before we end this lesson I would like to mention a few problems you may run into and what to do about them.
+            <br/><br/>The first is about comparing strings, when comparing two strings they must look exactly the same!
+            <br/><br/>Including the “casing”.
+            <br/>This means that “hello” & “Hello” are different words. You can solve this by making them as equal as possible:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`name  = 'David'
+expected_name = 'david'
+if expected_name.downcase == name.downcase
+    puts 'Name is correct!'
+end`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                name  = 'David'
+                <br/>expected_name = 'david'
+                <br/>if expected_name.downcase == name.downcase
+                <br/><pre>  puts 'Name is correct!'</pre>
+                end
+            </div>
+            <p>The key here is the <i>downcase</i> method on <i>name</i>.
+            <br/><br/>By making both strings downcase you can make sure they’ll match if they have the same content.
+            <br/>For example:
+            <br/><br/>“David” becomes “david”, and “david” stays “david”.
+
+            <br/><br/>Now both are “david” so you can compare them.
+            <p><br/>Another thing to watch out for is comparing numbers and strings. You can’t compare a number to a string directly, you need to convert the string to a number first:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`age = 10
+if age == '10'
+    puts 'You are 10 years old!'
+end`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                age = 10
+                <br/>if age == '10'
+                <br/><pre>  puts 'You are 10 years old!'</pre>
+                end
+            </div>
+            <h2 class='text-2xl text-red-400 mt-10'>Special Symbols in Strings</h2>
+            <p>Another problem you may come across related to arrays is “special symbols”.
+            <br/>These symbols are for things like new lines n, and the tab key t.
+            <br/<br/>The problem is when you try to compare two strings that look the same, but they have one of these special symbols. To see these special symbols you will need to use the <i>p</i> method:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`name = gets
+p name`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                name = gets
+                <br/>p name
+            </div>
+            <p>Try this code, type something in, and you will notice that <i>name</i> <strong>contains the newline character</strong> (which is not normally visible with <i>puts</i>).
+            <br/><br/>To remove this character you can use the <i>chomp method</i>.</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`name = gets.chomp
+p name`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                name = gets.chomp
+                <br/>p name
+            </div>
+            <p>Now the <i>name</i> variable will not contain the newline character <i>(n)</i>, which <strong>allows you to compare strings correctly</strong>.</p>
+            <h2 class='text-2xl text-red-400 mt-10'>If Construction in One Line</h2>
+            <p>It is possible to write the if construction in one line, but it is not recommended because it makes the code less readable. It is still useful if you have a simple condition.</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`puts 123 if 2.even?`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                puts 123 if 2.even?
+            </div>
+            <p>Which is the same as:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`if 2.even?
+    puts 123
+end`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                if 2.even?
+                <br/><pre>  puts 123</pre>
+                end
+            </div>
+            <h2 class='text-2xl text-red-400 mt-10'>Is There an Alternative?</h2>
+            <p>If you have an if else expression there is also a shorthand for that. It’s called the ternary operator:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`stock = 10
+40 > 100 ? put 'Greater than' : put 'Less than'`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                40 > 100 ? put 'Greater than' : put 'Less than'
+            </div>
+            <p>Which is the same as:</p>
+            <div id="code" class="ml-2 mr-2 mt-3 mb-5 p-5 rounded-md bg-gray-900">
+                <svg onclick="copyToClipboard(`if 40 > 100
+    put 'Greater than'
+else
+    put 'Less than'
+end`);" xmlns="http://www.w3.org/2000/svg" class="absolute right-[12%] stroke-gray-500 hover:stroke-white active:stroke-red-400 active:scale-110 transition-all" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>
+                if 40 > 100
+                <br/><pre>  put 'Greater than'</pre>
+                <br/>else
+                <br/><pre>  put 'Less than'</pre>
+                end
+            </div>
+            <p>It’s a bit shorter and can be useful in some cases.</p>
+            <p>Here is another <a target="_blank" href="https://www.rubyguides.com/2018/07/ruby-operators/" class="text-red-200 hover:text-red-400 hover:transition-all">article</a> if you want to know more about Ruby operators.</p>
+            <p class="text-center"><br/><br/><strong>Take notes. Practice. Repeat.</strong></p>
+            <div class="pt-10 pb-5 justify-center flex">
+                <a href="collections.html" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Previous (Collections)</a>
+                <a href="loops.html" class="ml-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Next (Loops)</a>
+            </div>
+    </div>
+</body>
+<style>
+    @font-face {
+      font-family: 'Raleway';
+      src: url('Raleway-VariableFont_wght.ttf') format('truetype');
+    }
+    @font-face {
+        font-family: 'Source Code Pro';
+        src: url('SourceCodePro-VariableFont_wght.ttf') format('truetype');
+    }
+    body{
+        font-family: 'Raleway', sans-serif;
+    }
+    #code{
+        font-family: 'Source Code Pro', monospace;
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    #all{
+        animation: fadeIn 700ms;
+    }
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        animation: fadeIn 350ms;
+    }
+    .dropdown{
+        animation: fadeIn 500ms;
+    }
+</style>
+</html>
